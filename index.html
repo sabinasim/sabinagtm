@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<script>
+			dataLayer = [];
+		</script>
 		<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,9 +16,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	</head>
 	<body>
-		<script>
-			dataLayer = [];
-		</script>
 		<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2LMPG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -31,7 +31,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         		<h1>Hellow World</h1>
 			<div><label for ="email">Email:</label>
 				<input type = "text" placeholder = "Enter Email" id="user_id">
-				<button type="submit" onclick="dataLayer.push({'user_webid': 'user_id'});"><span>Update</span></button>
+				<button type="submit" onclick="dataLayer.push({'user_webid': user_id});"><span>Update</span></button>
 			</div>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
