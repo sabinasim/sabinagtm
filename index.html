@@ -32,12 +32,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div><label for ="email">Email:</label>
 				<input type = "text" placeholder = "Enter Email" id="user_id">
 			<script>
-				function userChange() {
 				var userwebID = document.getElementById("user_id").value;
-				dataLayer.push({'user_webid': userwebID});
-				}
 			</script>
-				<button type="submit" onclick="userChange();"><span>Submit</span></button>
+				<button type="submit" onclick="dataLayer.push({'event': 'submit-click', 'user_webid': userwebID});"><span>Submit</span></button>
 			</div>
     		</div><!-- /.blurb -->
 		</div><!-- /.container -->
