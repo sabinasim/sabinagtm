@@ -29,12 +29,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="container">
     		<div class="blurb">
         		<h1>Hellow World</h1>
-			<div><label for ="email">Email:</label>
+			<div><label for ="emailtext">Email:</label>
 				<input type = "text" placeholder = "Enter Email" id="user_id">
 			<script>
 				function userChange() {
 				var userwebID = document.getElementById("user_id").value;
-				dataLayer.push({'event': 'submit-click', 'user_webid': userwebID})
+				dataLayer.push({'event': 'submit-click', 'email': userwebID})
 				}
 			</script>
 				<button type="submit" onclick="userChange();"><span>Submit</span></button>
