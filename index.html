@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script>
+		<!-- <script>
 			dataLayer = [];
-		</script>
+		</script> -->
 		<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<script>
 				function userChange() {
 				var userwebID = document.getElementById("user_id").value;
-				dataLayer.push({'event': 'submit-click', 'email': userwebID})
+				window.dataLayer.push({'event': 'submit-click', 'email': userwebID})
 				}
 			</script>
 				<button type="submit" onclick="userChange();"><span>Submit</span></button>
