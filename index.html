@@ -1,49 +1,127 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5C2LMPG');</script>
-<!-- End Google Tag Manager -->
-		
-		<title>Sabina's Test Website</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2LMPG"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-		
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hellow World</h1>
-			<div><label for ="emailtext">Email:</label>
-				<input type = "text" placeholder = "Enter Email" id="user_id">
-			<script>
+  <head>
+    <script>
+      ! function() {
+        var analytics = window.analytics = window.analytics || [];
+        if (!analytics.initialize)
+          if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
+          else {
+            analytics.invoked = !0;
+            analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"];
+            analytics.factory = function(e) {
+              return function() {
+                var t = Array.prototype.slice.call(arguments);
+                t.unshift(e);
+                analytics.push(t);
+                return analytics
+              }
+            };
+            for (var e = 0; e < analytics.methods.length; e++) {
+              var key = analytics.methods[e];
+              analytics[key] = analytics.factory(key)
+            }
+            analytics.load = function(key, e) {
+              var t = document.createElement("script");
+              t.type = "text/javascript";
+              t.async = !0;
+              t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+              var n = document.getElementsByTagName("script")[0];
+              n.parentNode.insertBefore(t, n);
+              analytics._loadOptions = e
+            };
+            analytics._writeKey = "SYImi2ibyBgtICUXyjA6ObprQ8uAfNq0";;
+            analytics.SNIPPET_VERSION = "4.15.3";
+            analytics.load("SYImi2ibyBgtICUXyjA6ObprQ8uAfNq0");
+            analytics.page();
+          }
+      }();
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-5C2LMPG');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>Sabina's Test Website</title>
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5C2LMPG" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="blurb">
+        <h1>Hellow World</h1>
+        <!-- 			<div><label for ="emailtext">Email:</label><input type = "text" placeholder = "Enter Email" id="user_id"><script>
 				function userChange() {
 				var userwebID = document.getElementById("user_id").value;
-				window.dataLayer.push({'event': 'submit-click', 'email': userwebID})
+				window.dataLayer.push({'event': 'submit-click', 'user': userwebID})
 				}
-			</script>
-				<button type="submit" onclick="userChange();"><span>Submit</span></button>
-			</div>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="https://github.com/sabinasim">github.com/sabinasim</a></li>
-			</ul>
-		</footer>
-	</body>
+			</script><button type="submit" onclick="userChange();"><span>Submit</span></button></div></div>
+					<!-- /.blurb -->
+        <br> Current User: <div id="currentUser"></div>
+        <br>
+        <div>
+          <label for="username">User ID:</label>
+          <input type="text" placeholder="Enter user id" id="user_id">
+          <script>
+            function userChange() {
+              var userwebID = document.getElementById("user_id").value;
+              window.dataLayer.push({
+                'event': 'submit-click',
+                'email': userwebID
+              })
+            }
+
+            function getUser() {
+              let result = appboy.getUser().getUserId();
+              document.getElementById("currentUser").innerHTML = result;
+            }
+          </script>
+          <button type="submit" onclick="userChange();getUser()">
+            <span>Submit</span>
+          </button>
+        </div>
+        <br>
+        <br>
+        <div>
+          <label for="customevent">Custom Event:</label>
+          <input type="text" placeholder="Enter basic custom event" id="customEvent">
+        </div>
+        <br>
+      </div>
+      <!-- /.container -->
+      <footer>
+        <ul>
+          <li>
+            <a href="https://github.com/sabinasim">github.com/sabinasim</a>
+          </li>
+        </ul>
+      </footer>
+  </body>
 </html>
