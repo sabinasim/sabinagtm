@@ -76,6 +76,16 @@
         <div>
           <label for="customevent">Custom Event:</label>
           <input type="text" placeholder="Enter basic custom event" id="customEvent">
+		<script>
+			function sendCustom() {
+				let customitem = document.getElementById("customEvent").value;
+				window.dataLayer.push({
+					'event': 'custom-click',
+					'logevent': customitem
+			})
+		}
+		</script>
+		<button type="custom" onclick="sendCustom()"><span>Send</span></button>
         </div>
         <br>
       </div>
